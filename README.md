@@ -1,8 +1,10 @@
 [![PixelTouch Next](https://raw.githubusercontent.com/kaepi2022/PixelTouch-Next/refs/heads/main/width_logo.png)](https://kaepi2022.github.io/PixelTouch/Next)
 
-#PixelTouch Next - チャレンジパッドNext用 Pixel風カスタムROM
+# PixelTouch Next - チャレンジパッドNext用 Pixel風カスタムROM
 
-##✨ 主な特徴 (Features)
+---
+
+## ✨ 主な特徴 (Features)
 
 - **1. Pure Pixel Experience**
   Pixel Launcherのサポート: Google標準のPixel Launcherで、クリーンで統一されたホーム画面を提供。
