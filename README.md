@@ -4,32 +4,52 @@
 
 ## **⚡ 概要 (Overview)**
 
-「PixelTouch Next」は、チャレンジパッドNextのハードウェア能力を最大限に引き出し、Google Pixelスマートフォンが提供する**純正のAndroid体験**へと完全に再定義するカスタムROMプロジェクトです。教育用タブレットの制約を打ち破り、日常使いに耐えうる、クリーンで統一されたデジタル環境を実現します。
+チャレンジパッドNext(TAB-A05-BA1)をPixelとして改造するためのプロジェクトです！
 
-## **✨ 主な特徴 (Key Features)**
+### **1\.機能 **
 
-### **1\. 完璧なピュア・ピクセル体験 (Pure Pixel Experience)**
-
-* Google Mobile Services (GMS) の完全統合:  
-  Google Playストア、マップ、Gmailなど、全てのGoogleサービスがシステムレベルで安定して動作します。  
-* Google 標準ランチャーのサポート:  
-  Pixel Launcherにより、ウィジェット、アプリドロワー、At A Glanceなど、Googleが設計したクリーンで統一感のあるホーム画面を提供します。  
+* GMSの有効化
+  もとのチャレンジパッドNextにはなかった、GMSを導入し、GooglePlayストアやさまざまなGoogleサービスを使用することができます！
+* Pixel Launcher:  
+  Pixel Launcherが標準ランチャーになったことでウィジェット、アプリドロワー、At A Glanceなど、Googleが設計したクリーンで統一感のあるホーム画面を提供し、よりPixelらしくなります！
 * デジタル・ウェルビーイング (Digital Wellbeing) 搭載:  
   スクリーンタイム管理、おやすみモード、集中力維持のための高度なフォーカスモードなど、最新のAndroid機能が利用可能です。
+* GooglePixelならではのアプリが使用可能！
+  GooglePixelでおなじみPixelカメラやGoogleのレコーダーなどが使用可能です！
+  
 
-### **2\. ノスタルジックなUI/UXの完全復元 (Pixel 3a Aesthetic)**
+### **2\. GUIがよりPixelらしく**
 
-このROMの核となるのは、**Pixel 3a (Android Pie 世代)** のデザイン哲学です。
+* ブートアニメーション:
+  起動時のアニメーションがチャレンジパッドNext向けに最適化され、とても起動時からPixelらしくなりました！
 
-* カラーパレットとデザインの徹底再現:  
-  実際にPixel 3aで採用されていたカラーリング、マテリアルデザインの要素、フォント、そしてスムーズなトランジションをUI全体に適用し、Pixelらしい洗練された視覚体験を提供します。  
+* 電源メニュー(電源ボタンを長押ししたときのメニュー)の復活:
+  標準のチャレンジパッドNext では電源メニューが「シャットダウン」、しかありませんでしたが、
+
+  PixelTouch Nextでは新たに「再起動」、「スクリーンショット」が利用可能になりより便利になりました！
+  
 * 純正サウンド・ライブラリの採用:  
-  通知音、アラーム音、着信音、そしてUI操作音に至るまで、全てPixel純正のものに入れ替えており、視覚と聴覚の両面からPixel体験を完成させます。
+  通知音、アラーム音、着信音、充電音、そしてUI操作音に至るまで、全てPixel純正のものに入れ替えており、視覚と聴覚の両面からPixel体験を完成させます。
 
-### **3\. ハードウェアのポテンシャル解放**
+### **3\. 純正のシステムアプリの排除**
 
 * 無駄なプリインストールアプリの排除:  
-  教育用アプリや不要なバックグラウンドプロセスを完全に削除し、システムのリソースを開放。タブレットの動作を可能な限り軽量化・高速化しています。
+  BenesseのシステムアプリやMediatek関連のカスタムAOSPアプリを削除しておりよりPixelらしくなります！
+  
+| 削除したアプリ一覧 |
+| アプリ名 | パッケージ名 |
+| :---: | :---: |
+| ブラウザー / GoogleChromeに変更 | com.android.browser |
+| 検索 / Googleアプリに変更 | com.android.quicksearchbox |
+| カレンダー/ Googleカレンダーに変更 | com.android.calender |
+| 連絡先 /GoogleContactsに変更 | com.android.contacts |
+| ギャラリー | com.android.gallery3d |
+| 音楽 | com.android.music |
+| 音声レコーダー | com.android.soundrecorder |
+| QuickStep / PixelLauncherに変更 | com.android.launcher3 |
+| 壁紙 / Googleの壁紙に変更 | com.android.wallpaperpicker |
+
+
 
 ## **⚠️ 利用規約 (Disclaimer)**
 
