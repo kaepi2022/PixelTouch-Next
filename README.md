@@ -21,19 +21,25 @@
 ### **2\. GUIがよりPixelらしく**
 
 * ブートアニメーション:
+
+  
   起動時のアニメーションがチャレンジパッドNext向けに最適化され、とても起動時からPixelらしくなりました！
 
 * 電源メニュー(電源ボタンを長押ししたときのメニュー)の復活:
+
+  
   標準のチャレンジパッドNext では電源メニューが「シャットダウン」、しかありませんでしたが、
 
   PixelTouch Nextでは新たに「再起動」、「スクリーンショット」が利用可能になりより便利になりました！
 
 * Google Play ストアで非対応だったアプリの対応化
+  
   チャレンジパッドNextにただGMSを入れただけの改造ではLINE/PaypayやGoogle フォト/Google Chrome/Google マップ
 
   などは利用不可でしたがPixelTouch Nextでは利用、更新ができるようになりました。
   
-* 純正サウンド・ライブラリの採用:  
+* 純正サウンド・ライブラリの採用:
+  
   通知音、アラーム音、着信音、充電音、そしてUI操作音に至るまで、全てPixel純正のものに入れ替えており、視覚と聴覚の両面からPixel体験を完成させます。
 
 ### **3\. 純正のシステムアプリの排除**
@@ -72,7 +78,7 @@
 | Google Playストア | com.android.vending |
 | Google Play 開発者サービス | com.google.android.gms |
 | Pixelのセットアップ | com.google.android.setupwizard |
-| Pixelランチャー | com.google.android.apps.nexuslauncher |
+| PixelLauncher | com.google.android.apps.nexuslauncher |
 | Digital Wellbeing | com.google.android.apps.wellbeing |
 | データ転送ツール | com.google.android.apps.pixelmigrate |
 
