@@ -42,6 +42,7 @@
   BenesseのシステムアプリやMediatek関連のカスタムAOSPアプリを削除しておりよりPixelらしくなります！
 
 * 削除または変更されたアプリ一覧
+
 | アプリ名 | パッケージ名 |
 | :---: | :---: |
 | ブラウザー / GoogleChromeに変更 | com.android.browser |
