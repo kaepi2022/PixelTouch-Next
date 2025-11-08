@@ -14,7 +14,7 @@
   Pixel Launcherが標準ランチャーになったことでウィジェット、アプリドロワー、At A Glanceなど、Googleが設計したクリーンで統一感のあるホーム画面を提供し、よりPixelらしくなります！
 * デジタル・ウェルビーイング (Digital Wellbeing) 搭載:  
   スクリーンタイム管理、おやすみモード、集中力維持のための高度なフォーカスモードなど、最新のAndroid機能が利用可能です。
-* GooglePixelならではのアプリが使用可能！
+* GooglePixelならではのアプリ:
   GooglePixelでおなじみPixelカメラやGoogleのレコーダーなどが使用可能です！
   
 
@@ -37,6 +37,7 @@
   BenesseのシステムアプリやMediatek関連のカスタムAOSPアプリを削除しておりよりPixelらしくなります！
   
 | 削除したアプリ一覧 |
+| :---: | :---: |
 | アプリ名 | パッケージ名 |
 | :---: | :---: |
 | ブラウザー / GoogleChromeに変更 | com.android.browser |
