@@ -1,5 +1,6 @@
-sargo:/ # ls -l /dev/block/by-name/
-total 0
+mount /system  : adb shell su mount -o rw,remount /system
+get system img : adb shell su dd if=system_directory of=/sdcard/system_name
+
 lrwxrwxrwx 1 root root 21 2025-11-03 22:53 boot -> /dev/block/mmcblk0p14
 lrwxrwxrwx 1 root root 20 2025-11-03 22:53 boot_para -> /dev/block/mmcblk0p2
 lrwxrwxrwx 1 root root 21 2025-11-03 22:53 cache -> /dev/block/mmcblk0p31
