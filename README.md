@@ -1,4 +1,4 @@
-[![PixelTouch]](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/mini_logo.png)
+![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/mini_logo.png)
 
 # **PixelTouch\- チャレンジパッドNeo/NextをPixelへ**
 
