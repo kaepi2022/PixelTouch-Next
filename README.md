@@ -1,20 +1,28 @@
-[![PixelTouch Next](https://raw.githubusercontent.com/kaepi2022/PixelTouch-Next/refs/heads/main/width_logo.png)](https://kaepi2022.github.io/PixelTouch/Next)
+[![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/mini_logo.png)
 
-# **PixelTouch Next \- チャレンジパッドNextをPixelへ**
+# **PixelTouch\- チャレンジパッドNeo/NextをPixelへ**
 
-## **⚡ 概要 (Overview)**
+## ** 概要 **
 
-チャレンジパッドNext(TAB-A05-BA1)をPixelとして改造するためのプロジェクトです！
+チャレンジパッドNeo/NextをPixelにするためのプロジェクトです！
 
 ### **1\.機能 **
 
 * GMSの有効化
   もとのチャレンジパッドNextにはなかった、GMSを導入し、GooglePlayストアやさまざまなGoogleサービスを使用することができます！
-* Pixel Launcher:  
-  Pixel Launcherが標準ランチャーになったことでウィジェット、アプリドロワー、At A Glanceなど、Googleが設計したクリーンで統一感のあるホーム画面を提供し、よりPixelらしくなります！
-* デジタル・ウェルビーイング (Digital Wellbeing) 搭載:  
+* Pixel Launcher:
+  
+  Pixel Launcherが標準ランチャーになったことでウィジェット、アプリドロワー、At A Glanceなど、
+
+  Googleが設計したクリーンで統一感のあるホーム画面を提供し、よりPixelらしくなります！
+
+  
+* デジタル・ウェルビーイング (Digital Wellbeing) 搭載:
+
   スクリーンタイム管理、おやすみモード、集中力維持のための高度なフォーカスモードなど、最新のAndroid機能が利用可能です。
+
 * GooglePixelならではのアプリ:
+
   GooglePixelでおなじみPixelカメラやGoogleのレコーダーなどが使用可能です！
   
 
