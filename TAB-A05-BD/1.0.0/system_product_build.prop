@@ -1,0 +1,10 @@
+
+#
+# ADDITIONAL PRODUCT PROPERTIES
+#
+
+ro.product.model=PixelTouch Neo
+ro.product.manufacturer=Google
+ro.product.brand=google
+
+ro.com.google.clientidbase=android-google
