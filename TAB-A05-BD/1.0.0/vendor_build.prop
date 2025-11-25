@@ -119,8 +119,8 @@ Build.BRAND=MTK
 ro.vendor.connsys.dedicated.log=1
 ro.crypto.volume.filenames_mode=aes-256-cts
 
+ro.config.ringtone=The_big_adventure.ogg
 ro.config.notification_sound=Popcorn.ogg
-ro.config.ringtone=Copycat.ogg
 ro.config.alarm_alert=Bright_morning.ogg
 
 dalvik.vm.foreground-heap-growth-multiplier=2.0
