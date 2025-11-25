@@ -135,6 +135,6 @@ dalvik.vm.stack-trace-dir=/data/anr
 ro.expect.recovery_id=0xee5e35eaddf8545bc39ecd25ec6363aeb5bc9a72000000000000000000000000
 
 ro.com.google.clientidbase=android-google
+ro.config.ringtone=The_big_adventure.ogg
 ro.config.notification_sound=Popcorn.ogg
-ro.config.ringtone=Copycat.og
 ro.config.alarm_alert=Bright_morning.ogg
