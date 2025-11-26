@@ -18,7 +18,7 @@
 ---
 
 ## 第三　ライセンス
-本プロジェクトは、ベース又は参考になった[CpadGmsSystem](https://github.com/s1204IT/CPadGmsSystem)をに開発したプロジェクトであり。
+本プロジェクトは、ベース又は参考になった[CpadGmsSystem](https://github.com/s1204IT/CPadGmsSystem)をに開発したプロジェクトであり、
 
 本プロジェクトを再編成、再配布する際には、必ずベースプロジェクト及び本プロジェクトのライセンスを記述することを条件とする。
 
