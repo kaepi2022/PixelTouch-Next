@@ -6,6 +6,7 @@
 
 ## Preview チャレンジパッドNeoで撮影
 
+![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/preview/screen0.png)
 ![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/preview/screen1.png)
 ![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/preview/screen2.png)
 ![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/preview/screen3.png)
