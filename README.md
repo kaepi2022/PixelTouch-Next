@@ -6,7 +6,7 @@
 
 ---
 
-# **クレジット**
+## **クレジット**
 
 本ROMは[CpadGmsSystem](https://github.com/s1204IT/CPadGmsSystem)をベースに作成しています。
 
