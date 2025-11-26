@@ -18,34 +18,34 @@ echo     Build :  pixeltouch_catcafe-1.0.0_kaepi_release
 echo     Author:  KAEPI2022 / MineKura
 echo     ----------------------------------------------------------
 echo.
-echo    PixelTouch ‚ÌƒCƒ“ƒXƒg[ƒ‰[‚Ö‚æ‚¤‚±‚»I
+echo    PixelTouch ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ©ãƒ¼ã¸ã‚ˆã†ã“ãï¼
 echo.
-echo     ’[––‚Íƒ`ƒƒƒŒƒ“ƒWƒpƒbƒhNEO(TAB-A05-BD)‚Å‚ ‚é‚±‚Æ‚ðŠm”F‚µ‚Ä‚­‚¾‚³‚¢B
-echo     iŒ¤ƒ[ƒ~‚Ì‰ð–ñ‚È‚Ç‚ðs‚Á‚Ä‚¢‚é‘O’ñ‚ÅŽÀs‚µ‚Ä‚­‚¾‚³‚¢B
-echo     –œ‚ªˆê‚È‚É‚©‚ª‹N‚±‚Á‚Ä‚àÓ”C‚ÍˆêØŽæ‚è‚Ü‚¹‚ñ‚Ì‚Å‚²—¹³‚­‚¾‚³‚¢B
+echo     ç«¯æœ«ã¯ãƒãƒ£ãƒ¬ãƒ³ã‚¸ãƒ‘ãƒƒãƒ‰NEO(TAB-A05-BD)ã§ã‚ã‚‹ã“ã¨ã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚
+echo     é€²ç ”ã‚¼ãƒŸã®è§£ç´„ãªã©ã‚’è¡Œã£ã¦ã„ã‚‹å‰æã§å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚
+echo     ä¸‡ãŒä¸€ãªã«ã‹ãŒèµ·ã“ã£ã¦ã‚‚è²¬ä»»ã¯ä¸€åˆ‡å–ã‚Šã¾ã›ã‚“ã®ã§ã”äº†æ‰¿ãã ã•ã„ã€‚
 echo.
-echo       ƒ‚[ƒh‚ÌƒL[‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢«  
-echo           (i)’[––‚ÉPixelTouch‚ðƒCƒ“ƒXƒg[ƒ‹
-echo           (f)AndroidƒVƒXƒeƒ€‚©‚çFastboot‚ð‹N“®
-echo           (b)Bootloader‚ÌƒAƒ“ƒƒbƒN
-echo           (n)ƒCƒ“ƒXƒg[ƒ‰[I—¹                   
+echo       ãƒ¢ãƒ¼ãƒ‰ã®ã‚­ãƒ¼ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„â†“  
+echo           (i)ç«¯æœ«ã«PixelTouchã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+echo           (f)Androidã‚·ã‚¹ãƒ†ãƒ ã‹ã‚‰Fastbootã‚’èµ·å‹•
+echo           (b)Bootloaderã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯
+echo           (n)ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ©ãƒ¼çµ‚äº†                   
 echo.
-set /p mode=ƒ‚[ƒh‚Ì“ü—Í „„ 
+set /p mode=ãƒ¢ãƒ¼ãƒ‰ã®å…¥åŠ› ï¼žï¼ž 
 
 if /I "%mode%" == "i" goto caveat_install_system
 if /I "%mode%" == "f" goto caveat_reboot_boot_loader
 if /I "%mode%" == "b" goto caveat_boot_loader_unlock
 if /I "%mode%" == "n" goto exit_task
 
-echo –³Œø‚Èƒ‚[ƒh‚Å‚·B
+echo ç„¡åŠ¹ãªãƒ¢ãƒ¼ãƒ‰ã§ã™ã€‚
 goto main
 
 :caveat_reboot_boot_loader
-title fastboot‚Ì‹N“®
+title fastbootã®èµ·å‹•
 cls
 echo.
 echo      ==========================================================
-echo      PC‚ÆÚ‘±‚µ‚ÄAUSBƒfƒoƒbƒN‚ªON‚Ìó‘Ô‚Åì‹Æ‚ðŠJŽn‚µ‚Ä‚­‚¾‚³‚¢B
+echo      PCã¨æŽ¥ç¶šã—ã¦ã€USBãƒ‡ãƒãƒƒã‚¯ãŒONã®çŠ¶æ…‹ã§ä½œæ¥­ã‚’é–‹å§‹ã—ã¦ãã ã•ã„ã€‚
 echo      ==========================================================
 echo.
 pause
@@ -57,13 +57,13 @@ echo.
 cls
 adb reboot bootloader > nul 2>&1
 if %errorlevel% neq 0 (
-   echo  reboot to bootloader         FAILD :i
+   echo  reboot to bootloader         FAILD :ï¼ˆ
    goto error
 ) else (
-   echo  reboot to bootloader         OK     :j
+   echo  reboot to bootloader         OK     :ï¼‰
    echo.
    echo      ==========================================================
-   echo            fastboot‚Ì‹N“®‚É¬Œ÷‚µ‚Ü‚µ‚½B
+   echo            fastbootã®èµ·å‹•ã«æˆåŠŸã—ã¾ã—ãŸã€‚
    echo      ==========================================================
    echo.
    pause
@@ -71,33 +71,33 @@ if %errorlevel% neq 0 (
 )
 
 :caveat_boot_loader_unlock
-title bootloader ƒAƒ“ƒƒbƒN
+title bootloader ã‚¢ãƒ³ãƒ­ãƒƒã‚¯
 cls
 echo.
 echo      ==========================================================
-echo      ’[––‚ðfastboot ƒ‚[ƒh‚Å‘Ò‹@‚µ‚Ä‚­‚¾‚³‚¢IIII
+echo      ç«¯æœ«ã‚’fastboot ãƒ¢ãƒ¼ãƒ‰ã§å¾…æ©Ÿã—ã¦ãã ã•ã„ï¼ï¼ï¼ï¼
 echo      ==========================================================
 echo.
-echo   ŒxI@ŽÀs‚·‚é‚Æƒ†[ƒU[ƒf[ƒ^‚ªíœ‚³‚ê‚Ü‚·B
-echo   ‘±‚¯‚éê‡‚Í y ‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B
+echo   è­¦å‘Šï¼ã€€å®Ÿè¡Œã™ã‚‹ã¨ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒ‡ãƒ¼ã‚¿ãŒå‰Šé™¤ã•ã‚Œã¾ã™ã€‚
+echo   ç¶šã‘ã‚‹å ´åˆã¯ y ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚
 echo.
-set /p sys_continue=“ü—Í‚µ‚Ä‚­‚¾‚³‚¢ „„ 
+set /p sys_continue=å…¥åŠ›ã—ã¦ãã ã•ã„ ï¼žï¼ž 
 if /I "%sys_continue%" == "y" goto bootloader_unlock
 goto main
 
 :bootloader_unlock
 echo.
-echo  ‰æ–Ê‚É€–Ú‚ªo‚½‚çƒ^ƒuƒŒƒbƒg‚Ì‰¹—Êƒ{ƒ^ƒ“+‚ð‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢II
+echo  ç”»é¢ã«é …ç›®ãŒå‡ºãŸã‚‰ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆã®éŸ³é‡ãƒœã‚¿ãƒ³+ã‚’æŠ¼ã—ã¦ãã ã•ã„ï¼ï¼
 echo.
 fastboot flashing unlock > nul 2>&1
 if %errorlevel% neq 0 (
-   echo  boot loader unlock..         FAILD :i
+   echo  boot loader unlock..         FAILD :ï¼ˆ
    goto error
 ) else (
-   echo  boot loader unlock..         OK     :j
+   echo  boot loader unlock..         OK     :ï¼‰
    echo.
    echo      ==========================================================
-   echo           bootloader‚ÌƒAƒ“ƒƒbƒN‚Í–³Ž–Š®—¹‚µ‚Ü‚µ‚½B
+   echo           bootloaderã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯ã¯ç„¡äº‹å®Œäº†ã—ã¾ã—ãŸã€‚
    echo      ==========================================================
    echo.
    pause
@@ -106,9 +106,9 @@ if %errorlevel% neq 0 (
 
 :error
 echo.
-title ŽÀsƒGƒ‰[ :i
+title å®Ÿè¡Œã‚¨ãƒ©ãƒ¼ :ï¼ˆ
 echo      ==========================================================
-echo      ŽÀs’†‚ÉƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½B Ä“x‚¨ŽŽ‚µ‚­‚¾‚³‚¢B
+echo      å®Ÿè¡Œä¸­ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚ å†åº¦ãŠè©¦ã—ãã ã•ã„ã€‚
 echo      ==========================================================
 echo.
 pause
@@ -117,7 +117,7 @@ goto main
 :exit_task
 cls
 echo.
-echo  GoodBye :j
+echo  GoodBye :ï¼‰
 echo.
 timeout /t 2 > nul
 cls
@@ -126,17 +126,17 @@ title cmd.exe
 cmd.exe
 
 :caveat_install_system
-title PixelTouch Next‚ÌƒCƒ“ƒXƒg[ƒ‹
+title PixelTouchã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 cls
 echo.
 echo   ==========================================================
-echo      ’[––‚ðfastboot ƒ‚[ƒh‚Å‘Ò‹@‚µ‚Ä‚­‚¾‚³‚¢IIII
+echo      ç«¯æœ«ã‚’fastboot ãƒ¢ãƒ¼ãƒ‰ã§å¾…æ©Ÿã—ã¦ãã ã•ã„ï¼ï¼ï¼ï¼
 echo   ==========================================================
 echo.
-echo   ŒxI@ŽÀs‚·‚é‚Æƒ†[ƒU[ƒf[ƒ^‚ªíœ‚³‚ê‚Ü‚·B
-echo   ‘±‚¯‚éê‡‚Í y ‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B
+echo   è­¦å‘Šï¼ã€€å®Ÿè¡Œã™ã‚‹ã¨ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒ‡ãƒ¼ã‚¿ãŒå‰Šé™¤ã•ã‚Œã¾ã™ã€‚
+echo   ç¶šã‘ã‚‹å ´åˆã¯ y ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚
 echo.
-set /p sys_continue=“ü—Í‚µ‚Ä‚­‚¾‚³‚¢ „„ 
+set /p sys_continue=å…¥åŠ›ã—ã¦ãã ã•ã„ ï¼žï¼ž 
 if /I "%sys_continue%" == "y" goto install_system
 goto main
 
@@ -145,235 +145,162 @@ cls
 echo.
 echo.
 echo.
-echo   ƒCƒ“ƒXƒg[ƒ‹‚ðŠJŽn‚µ‚Ü‚·I
-echo   ’[––‚ÉG‚ê‚È‚¢‚Å‚­‚¾‚³‚¢B
+echo   ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã‚’é–‹å§‹ã—ã¾ã™ï¼
+echo   ç«¯æœ«ã«è§¦ã‚Œãªã„ã§ãã ã•ã„ã€‚
 echo.
 
 fastboot flash preloader imgs/preloader.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash preloader     FAILD :i
+   echo flash preloader     FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash preloader     OK     :j
-) 
-
-fastboot flash partition imgs/pgpt.img > nul 2>&1
-if %errorlevel% neq 0 (
-   echo flash partition     FAILD :i
-   goto error
-) else (
-   echo flash partition     OK     :j
+   echo flash preloader     OK     :ï¼‰
 ) 
 
 fastboot flash boot_para imgs/boot_para.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash boot_para     FAILD :i
+   echo flash boot_para     FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash boot_para     OK     :j
+   echo flash boot_para     OK     :ï¼‰
 ) 
 
 fastboot flash cam_vpu1 imgs/cam_vpu1.img > nul 2>&1
 fastboot flash cam_vpu2 imgs/cam_vpu2.img > nul 2>&1
 fastboot flash cam_vpu3 imgs/cam_vpu3.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash cam_vpu       FAILD :i
+   echo flash cam_vpu       FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash cam_vpu       OK     :j
-)
-
-fastboot erase nvram > nul 2>&1
-if %errorlevel% neq 0 (
-   echo erase nvram         FAILD :i
-   goto error
-) else (
-   echo erase nvram         OK     :j
-)
-
-fastboot erase protect1 > nul 2>&1
-fastboot erase protect2 > nul 2>&1
-if %errorlevel% neq 0 (
-   echo erase protect       FAILD :i
-   goto error
-) else (
-   echo erase protect       OK     :j
-)
-
-fastboot erase nvcfg > nul 2>&1
-if %errorlevel% neq 0 (
-   echo erase nvcfg         FAILD :i
-   goto error
-) else (
-   echo erase nvcfg         OK     :j
+   echo flash cam_vpu       OK     :ï¼‰
 )
 
 fastboot flash lk imgs/lk.img > nul 2>&1
 fastboot flash lk2 imgs/lk.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash lk            FAILD :i
+   echo flash lk            FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash lk            OK     :j
+   echo flash lk            OK     :ï¼‰
 )
 
 fastboot flash boot imgs/boot.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash boot          FAILD :i
+   echo flash boot          FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash boot          OK     :j
+   echo flash boot          OK     :ï¼‰
 )
 
 fastboot flash recovery imgs/recovery.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash recovery      FAILD :i
+   echo flash recovery      FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash recovery      OK     :j
+   echo flash recovery      OK     :ï¼‰
 )
 
 fastboot flash logo imgs/logo.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash logo          FAILD :i
+   echo flash logo          FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash logo          OK     :j
+   echo flash logo          OK     :ï¼‰
 )
 
 fastboot flash dtbo imgs/dtbo.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash dtbo          FAILD :i
+   echo flash dtbo          FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash dtbo          OK     :j
-)
-
-fastboot erase expdb > nul 2>&1
-if %errorlevel% neq 0 (
-   echo erase expdb         FAILD :i
-   goto error
-) else (
-   echo erase expdb         OK     :j
-)
-
-fastboot flash frp imgs/frp.img > nul 2>&1
-if %errorlevel% neq 0 (
-   echo flash frp           FAILD :i
-   goto error
-) else (
-   echo flash frp           OK     :j
-)
-
-fastboot erase nvdata > nul 2>&1
-if %errorlevel% neq 0 (
-   echo erase nvdata        FAILD :i
-   goto error
-) else (
-   echo erase nvdata        OK     :j
+   echo flash dtbo          OK     :ï¼‰
 )
 
 fastboot flash tee1 imgs/tee.img > nul 2>&1
 fastboot flash tee2 imgs/tee.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash tee           FAILD :i
+   echo flash tee           FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash tee           OK     :j
-)
-
-fastboot erase kb > nul 2>&1
-if %errorlevel% neq 0 (
-   echo erase kb            FAILD :i
-   goto error
-) else (
-   echo erase kb            OK     :j
-)
-
-fastboot erase dkb > nul 2>&1
-if %errorlevel% neq 0 (
-   echo erase dkb           FAILD :i
-   goto error
-) else (
-   echo erase dkb           OK     :j
+   echo flash tee           OK     :ï¼‰
 )
 
 fastboot erase metadata > nul 2>&1
 if %errorlevel% neq 0 (
-   echo erase metadata      FAILD :i
+   echo erase metadata      FAILD :ï¼ˆ
    goto error
 ) else (
-   echo erase metadata      OK     :j
+   echo erase metadata      OK     :ï¼‰
 )
 
 fastboot --disable-verity flash vbmeta imgs/vbmeta.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash vbmeta        FAILD :i
+   echo flash vbmeta        FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash vbmeta        OK     :j
+   echo flash vbmeta        OK     :ï¼‰
 )
 
 fastboot flash system imgs/system.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash system        FAILD :i
+   echo flash system        FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash system        OK     :j
+   echo flash system        OK     :ï¼‰
 )
 
 fastboot flash vendor imgs/vendor.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash vendor        FAILD :i
+   echo flash vendor        FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash vendor        OK     :j
+   echo flash vendor        OK     :ï¼‰
 )
 
 fastboot flash factory imgs/factory.img > nul 2>&1
 if %errorlevel% neq 0 (
-   echo flash factory       FAILD :i
+   echo flash factory       FAILD :ï¼ˆ
    goto error
 ) else (
-   echo flash factory       OK     :j
+   echo flash factory       OK     :ï¼‰
 )
 
 fastboot erase cache > nul 2>&1
 if %errorlevel% neq 0 (
-   echo erase cache         FAILD :i
+   echo erase cache         FAILD :ï¼ˆ
    goto error
 ) else (
-   echo erase cache         OK     :j
+   echo erase cache         OK     :ï¼‰
 )
 
 fastboot erase userdata > nul 2>&1
 if %errorlevel% neq 0 (
-   echo erase userdata      FAILD :i
+   echo erase userdata      FAILD :ï¼ˆ
    goto error
 ) else (
-   echo erase userdata      OK     :j
+   echo erase userdata      OK     :ï¼‰
 )
 
 fastboot erase cache > nul 2>&1
 fastboot erase userdata > nul 2>&1
 if %errorlevel% neq 0 (
-   echo wipe final          FAILD :i
+   echo wipe final          FAILD :ï¼ˆ
    goto error
 ) else (
-   echo wipe final          OK     :j
+   echo wipe final          OK     :ï¼‰
 )
 
 fastboot reboot > nul 2>&1
 if %errorlevel% neq 0 (
-   echo reboot              FAILD :i
+   echo reboot              FAILD :ï¼ˆ
 ) else (
-   echo reboot              OK     :j
+   echo reboot              OK     :ï¼‰
 )
 
 echo.
 echo      ==========================================================
-echo            PixelTouch‚ÌƒCƒ“ƒXƒg[ƒ‹‚É¬Œ÷‚µ‚Ü‚µ‚½I :j
-echo      ”O‚Ìˆ×AÄ“xƒŠƒJƒoƒŠ[‚©‚ç‰Šú‰»‚µ‚Ä‚©‚çÄ‹N“®‚µ‚Ä‚­‚¾‚³‚¢B
+echo            PixelTouchã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã«æˆåŠŸã—ã¾ã—ãŸï¼ :ï¼‰
+echo      å¿µã®ç‚ºã€å†åº¦ãƒªã‚«ãƒãƒªãƒ¼ã‹ã‚‰åˆæœŸåŒ–ã—ã¦ã‹ã‚‰å†èµ·å‹•ã—ã¦ãã ã•ã„ã€‚
 echo      ==========================================================
 echo.
 pause
