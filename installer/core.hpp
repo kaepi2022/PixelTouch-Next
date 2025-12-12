@@ -1,9 +1,8 @@
 /*
 ----------------------------------------------------------------
-            PixelTouch Installer Source code v1.0
+            PixelTouch Installer Source code
             
-            2025/12/12  created by kaepi2022(MineKura)
-                                ©2025 kaepi2022 
+            2025/MM/DD    by kaepi2022(MineKura)
 
             This Project Using STL and OpenGL and SFML.
     I have great appreciation and respect for the developers.
@@ -144,12 +143,9 @@ namespace install_{
 
             std::system((path_fastboot + std::string("getvar product > .\\") + path_save_fsbt_logfile + std::string(" 2>&1")).c_str());
             device_prop.open(path_save_fsbt_logfile);
-            
             std::getline(device_prop,check_);
             //9は「product: 」の9文字です...マジックナンバーですはい...
-
             if(check_.substr(9) == config_device_MODEL_FSBT) device_situation |=  DEVICE_SITUATION_DEVICE_OK ;
-            
             test = check_.substr(9);
             device_prop.close();
         }else{
@@ -273,8 +269,8 @@ namespace install_{
     std::string command;
 
     void install_scene(){
-        
         if( is_execution_completed.load() && !install_prompt.eof()){
+
             if(command_execute_thread != nullptr) command_execute_thread->join();
 
             if(execution_result.load() > 0){
@@ -418,7 +414,7 @@ namespace title_{
             title_button_rebootbl.sf_getBgObject().setFillColor(gui_button_color_using);
             if(command_execute_thread == nullptr){
                 title_text_command_message.sf_getObject().setString(to_sfString(gm_reboot_bootloader_started_message));
-                command_execute_thread = new std::thread(execution,std::string(path_fastboot + std::string("reboot bootloader")),false);
+                command_execute_thread = new std::thread(execution,std::string(path_adb + std::string("reboot bootloader")),false);
             } 
 
             if(is_execution_completed.load()){

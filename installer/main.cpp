@@ -15,7 +15,7 @@
 #include "core.hpp"
 
 int main(){
-
+    install_::install_prompt.open(path_config_install_system);
     
     init_installer();           //device.configを読み込み
 
@@ -66,7 +66,7 @@ int main(){
         }
         toolUpdate();
     }
-    //怖いので...
+    
     if(command_execute_thread != nullptr){
         command_execute_thread->join();
         delete command_execute_thread;
