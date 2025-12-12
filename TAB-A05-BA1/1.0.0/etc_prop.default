@@ -25,8 +25,8 @@ pm.dexopt.shared=speed
 dalvik.vm.dex2oat-minidebuginfo=true
 debug.atrace.tags.enableflags=0s
 ro.mediatek.platform=MT8168
-ro.mediatek.version.branch=PixelTouch
-ro.mediatek.version.release=PixelTouch
+ro.mediatek.version.branch=cpad_official_build_01.03.000-CpadGmsSystemBase
+ro.mediatek.version.release=cpad_official_build_01.03.000-CpadGmsSystemBase
 ro.com.android.mobiledata=false
 ro.base_build=noah
 #
