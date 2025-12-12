@@ -1,5 +1,5 @@
 ![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/mini_logo.png)
-![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/Pixeltouch.png)
+![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/Pixeltouch_desin.png)
 # **PixelTouch Neo/Next**
 
 チャレンジパッドNeo/NextをGoogle Pixelとして使うためのROMです。
