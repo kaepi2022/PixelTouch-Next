@@ -65,7 +65,7 @@ button        install_button_next({600.f,400.f},{150.f,56.f},&global_texture_but
 button        install_button_complete({600.f,400.f},{150.f,56.f},&global_texture_button_1_bg,path_gui_button_complete);
 button        install_button_retry({600.f,400.f},{150.f,56.f},&global_texture_button_1_bg,path_gui_button_retry);
 
-text          install_text_step_message({190.f,20.f},35.f,gm_install_step_message);
+text          install_text_step_message({250.f,20.f},35.f,gm_install_step_message);
 text          install_text_step_message_mini({150.f,80.f},20.f,gm_install_step_message_mini);
 text          install_text_next_button_message({200.f,100.f},20.f,gm_install_next_button_message_defalut);
 
@@ -166,6 +166,7 @@ namespace install_{
                 delete command_execute_thread;
                 command_execute_thread = nullptr;
             } 
+            title_text_command_message.sf_getObject().setString("");
             now_scene = ID_TITLE;
         }
 
@@ -220,7 +221,7 @@ namespace install_{
             if(command_execute_thread != nullptr) delete command_execute_thread;    //安全第一w
             
             reset_install_messege_scene_next_button_text();
-
+            title_text_command_message.sf_getObject().setString("");
             now_scene = ID_TITLE;
         }
 
