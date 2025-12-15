@@ -12,8 +12,10 @@
 ![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/preview/screen3.png)
 ![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/preview/screen4.png)
 
+## GUIインストーラー
+![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/pixeltouch_installer_gui.png)
+簡単にPixelTouchシステムを導入できるような設計にしております。
 
----
 
 ## **クレジット**
 
