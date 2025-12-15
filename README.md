@@ -17,7 +17,7 @@
 簡単にPixelTouchシステムを導入できるような設計にしております。
 
 
-## **クレジット**
+## **使用許諾**
 
 本ROMを使用する場合は[利用規約](https://github.com/kaepi2022/PixelTouch/blob/main/terms_of_service.md)をしっかりと読んでください。
 本ROMをインストールした場合以下の利用規約に同意したものとみなします。
