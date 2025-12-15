@@ -14,6 +14,7 @@
 
 ## GUIインストーラー
 ![PixelTouch](https://raw.githubusercontent.com/kaepi2022/PixelTouch/refs/heads/main/preview/pixeltouch_installer_gui_preview.png)
+
 簡単にPixelTouchシステムを導入できるような設計にしております。
 
 
