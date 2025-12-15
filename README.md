@@ -17,6 +17,5 @@
 
 ## **クレジット**
 
-本ROMは[CpadGmsSystem](https://github.com/s1204IT/CPadGmsSystem)をベースに作成しています。
-
-[CpadGmsSystem](https://github.com/s1204IT/CPadGmsSystem)の開発者の皆様に深く感謝と敬意を表します。
+本ROMを使用する場合は[利用規約](https://github.com/kaepi2022/PixelTouch/blob/main/terms_of_service.md)をしっかりと読んでください。
+本ROMをインストールした場合以下の利用規約に同意したものとみなします。
