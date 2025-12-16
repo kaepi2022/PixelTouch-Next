@@ -1,0 +1,251 @@
+
+  /* 左下 - 四角形 */
+  html::before{
+    content: '';
+    position: fixed;
+    bottom: -40px;
+    left: -40px;
+    width: 250px;
+    height: 250px;
+    background: #34A853;
+    z-index: -1;
+    pointer-events: none;
+    transform: rotate(45deg);
+  }
+  
+  /* 右下 - 五角形っぽい図形（菱形） */
+  html::after{
+    content: '';
+    position: fixed;
+    bottom: -30px;
+    right: -30px;
+    width: 200px;
+    height: 200px;
+    background: #4285F4;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+body{
+   overflow: hidden;
+   margin: 0 auto;
+   position: relative;
+   font-family: "Noto Sans JP";
+}
+
+/* スマホ版でコンテンツを表示可能にする */
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+}
+
+/* 左上 - 円 */
+body::before{
+   content: '';
+   position: fixed;
+   top: -50px;
+   left: -50px;
+   width: 200px;
+   height: 200px;
+   background: radial-gradient(circle, #FBBC05, #FBBC05);
+   border-radius: 50%;
+   z-index: -1;
+   pointer-events: none;
+}
+
+/* 右上 - 三角形 */
+body::after{
+   content: '';
+   position: fixed;
+   top: -30px;
+   right: -100px;
+   width: 0;
+   height: 0;
+   border-left: 150px solid transparent;
+   border-right: 150px solid transparent;
+   border-bottom: 160px solid #EA4335;
+   z-index: -1;
+   pointer-events: none;
+   transform: rotate(60deg);
+}
+
+.about{
+   margin: 0 auto;
+   display: flex;
+   width: 81%;
+   gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .about {
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.about_box{
+   margin: 0 auto;
+   padding: 20px;
+   height: 500px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .about_box {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+}
+
+.about_device_box{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.about_box_info{
+   font-size: 120%;
+}
+
+@media (max-width: 768px) {
+  .about_box_info {
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about_box_info {
+    font-size: 90%;
+  }
+}
+
+.about_device_img_size{
+
+   width: 100%;
+   height: 50%;
+}
+.about_img_size{
+   width: 50%;
+   height: 25%;
+}
+
+.button_box{
+   display: flex;
+   margin: auto;
+   padding: 5px;
+   height: 75px;
+   width: 80%;
+   flex-direction: row;
+   gap: 0;
+}
+
+@media (max-width: 768px) {
+  .button_box {
+    width: 95%;
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 10px 0;
+  }
+}
+
+.button_main{
+   text-decoration: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 50%;
+   height: 100%;
+   font-size: 80%;
+   border-radius: 25px;
+   color: white;
+   background-color: #4285F4;
+   transition: background-color 0.2s ease;
+   padding: 0;
+   box-sizing: border-box;
+   margin: 0 5%;
+}
+
+@media (max-width: 768px) {
+  .button_main {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.button_main:hover{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 25px;
+   color: white;
+   background-color: #5269D1;
+}
+
+
+
+/* ------------------ Carousel styles ------------------ */
+.carousel{
+   width: 100%;
+   margin: 40px auto;
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    margin: 20px auto;
+  }
+}
+
+.carousel__viewport{
+   margin: auto;
+   overflow: hidden;
+   width: 80%;
+   border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .carousel__viewport {
+    width: 95%;
+  }
+}
+.carousel__track{
+   display: flex;
+   will-change: transform;
+}
+
+/* keyframes used for seamless loop (JS sets duration) */
+@keyframes scroll{
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.carousel__slide{
+   flex: 0 0 auto; /* each slide keeps its own width */
+   box-sizing: border-box;
+}
+.carousel__slide img{
+   display: block;
+   width: auto;
+   height: 200px;
+   object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .carousel__slide img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel__slide img {
+    height: 120px;
+  }
+}
