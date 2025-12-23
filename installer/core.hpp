@@ -37,6 +37,7 @@ constexpr u8 ID_INSTALLING_SUCSESS = 4;
 u8 now_scene = ID_TITLE;
 
 
+
 sf::Texture global_texture_button_1_bg( path_gui_button_bg_1 );
 sf::Texture global_texture_button_2_bg( path_gui_button_bg_2 );
 
@@ -50,6 +51,7 @@ object       title_object_device_with_droid({480.f,125.f},{300.f,200.f},path_gui
 button       title_button_install({480.f,390.f},{300.f,74.f},&global_texture_button_2_bg,path_gui_button_install);
 button       title_button_rebootbl({300.f,400.f},{150.f,56.f},&global_texture_button_1_bg,path_gui_button_rebootbl);
 button       title_button_blu({120.f,400.f},{150.f,56.f},&global_texture_button_1_bg,path_gui_button_blu);
+button       title_button_update({600.f,20.f},{150.f,56.f},&global_texture_button_1_bg,path_gui_button_update);
 text         title_text_welcome_message({20.f,150.f},40.f,gm_home_welcome);
 text         title_text_version_copylight({20.f,480.f},15.f,gm_version_copylight);
 text         title_text_device_name({490.f,100.f},25.f,"");
@@ -121,6 +123,10 @@ namespace install_{
     constexpr u8 DEVICE_SITUATION_BOOTLOADER_OK = (1 << 0);
     constexpr u8 DEVICE_SITUATION_DEVICE_OK = (1 << 1);
 
+    u8 install_scene_mode = 0;  //0はモードなし
+    constexpr u8 INSTALL_SCENE_MODE_INSTALL = 1;
+    constexpr u8 INSTALL_SCENE_MODE_UPDATE  = 2;
+
     bool install_message_next_button_clicked = false;
 
     void reset_install_messege_scene_next_button_text(){
@@ -168,6 +174,9 @@ namespace install_{
             } 
             title_text_command_message.sf_getObject().setString("");
             now_scene = ID_TITLE;
+
+            execution_result.store(0);
+            is_execution_completed.store(false);
         }
 
 
@@ -189,12 +198,15 @@ namespace install_{
                 delete command_execute_thread;
                 command_execute_thread = nullptr;
             } 
+
+            execution_result.store(0);
+            is_execution_completed.store(false);
             now_scene = ID_INSTALL_MESSAGE;
         }
 
 
         window.clear(sf::Color::White);
-                install_object_error_obj.draw(window);
+        install_object_error_obj.draw(window);
         install_text_log_error_message.draw(window);
         install_text_log_error_message_mini.draw(window);
         install_button_retry.draw(window);
@@ -203,6 +215,7 @@ namespace install_{
     }
 
     void install_message_scene(){
+        
         if(install_button_next.is_selected()) install_button_next.sf_getBgObject().setFillColor(gui_button_color_selected);
         else install_button_next.sf_getBgObject().setFillColor(gui_button_color_normal);
 
@@ -223,6 +236,8 @@ namespace install_{
             reset_install_messege_scene_next_button_text();
             title_text_command_message.sf_getObject().setString("");
             now_scene = ID_TITLE;
+
+            install_scene_mode = 0; //無にする。
         }
 
         if(install_message_next_button_clicked && is_execution_completed.load()){
@@ -233,11 +248,15 @@ namespace install_{
             command_execute_thread = nullptr;
 
             if((device_situation & DEVICE_SITUATION_BOOTLOADER_OK) > 0 && (device_situation & DEVICE_SITUATION_DEVICE_OK) > 0){
-                install_prompt.seekg(0);
                 reset_install_messege_scene_next_button_text();
                 command_execute_thread = new std::thread(execution,path_fastboot + std::string("devices"),false); //とりあえず
                 setWindow_restrictions();  //バツボタン禁止
                 now_scene = ID_INSTALLING;
+
+                if(install_prompt.is_open()) install_prompt.close();    //もしファイルが開いたままだと閉じる。
+
+                if(install_scene_mode == INSTALL_SCENE_MODE_INSTALL) install_prompt.open(path_config_install_system);       //システムインストールモードならinstall.config
+                else if(install_scene_mode == INSTALL_SCENE_MODE_UPDATE) install_prompt.open(path_config_system_update);   //システムアップデートモードならupdate.config
                 
             }
             
@@ -278,7 +297,7 @@ namespace install_{
                 install_text_installing_log.sf_getObject().setString(to_sfString(
                     ("エラー")
                 ));
-                install_prompt.seekg(0);
+                install_prompt.close();
                 execution_result.store(0);
                 is_execution_completed.store(false);
                 if(command_execute_thread != nullptr){
@@ -287,6 +306,14 @@ namespace install_{
                 }
                 init_window();
                 now_scene = ID_INSTALLING_ERROR;
+
+                if(install_scene_mode == INSTALL_SCENE_MODE_INSTALL){
+                    install_text_log_error_message.sf_getObject().setString(to_sfString(gm_installing_log_error));
+                    install_text_step_message.sf_getObject().setString( to_sfString(gm_install_step_message) );
+                }else if(install_scene_mode == INSTALL_SCENE_MODE_UPDATE){
+                    install_text_log_error_message.sf_getObject().setString(to_sfString(gm_installing_update_log_error));
+                    install_text_step_message.sf_getObject().setString( to_sfString(gm_install_update_step_message) );
+                }
 
                 return; //終了させる
             }
@@ -318,7 +345,7 @@ namespace install_{
                 );
 
                 install_text_installing_log.sf_getObject().setString(to_sfString(
-                    (partition + gm_installing_log_flash)
+                    (partition + (install_scene_mode == INSTALL_SCENE_MODE_INSTALL ? gm_installing_log_flash : gm_installing_update_log_flash))
                 ));
             }
             else if(verfily == "E"){
@@ -343,11 +370,23 @@ namespace install_{
         }
 
         if(install_prompt.eof()){
-            install_prompt.seekg(0);
             execution_result.store(0);
             is_execution_completed.store(false);
             init_window();
+            install_prompt.close();
             now_scene = ID_INSTALLING_SUCSESS;
+
+            if(install_scene_mode == INSTALL_SCENE_MODE_INSTALL){
+                install_text_log_sucsess_message.sf_getObject().setString(to_sfString(gm_installing_log_sucsess));
+                install_text_log_sucsess_message_mini.sf_getObject().setString(to_sfString(gm_installing_log_sucsess_pls_message));
+                install_text_log_sucsess_message_mini.sf_getObject().setPosition({80.f,80.f});
+            }else if(install_scene_mode == INSTALL_SCENE_MODE_UPDATE){
+                install_text_log_sucsess_message.sf_getObject().setString(to_sfString(gm_installing_update_log_sucsess));
+                install_text_log_sucsess_message_mini.sf_getObject().setString(to_sfString(gm_installing_update_log_sucsess_pls_message));
+                install_text_log_sucsess_message_mini.sf_getObject().setPosition({165.f,80.f});
+            }
+
+            install_scene_mode = 0; //無
         }
 
         window.clear(sf::Color::White);
@@ -385,6 +424,10 @@ namespace title_{
         else if((lock_button_status & LOCK_INSTALL_BUTTON) <= 0) title_button_install.sf_getBgObject().setFillColor(gui_button_color_normal);
         else title_button_install.sf_getBgObject().setFillColor(gui_button_color_disabled);
 
+        if(title_button_update.is_selected() && (lock_button_status & LOCK_INSTALL_BUTTON) <= 0) title_button_update.sf_getBgObject().setFillColor(gui_button_color_selected);
+        else if((lock_button_status & LOCK_INSTALL_BUTTON) <= 0) title_button_update.sf_getBgObject().setFillColor(gui_button_color_normal);
+        else title_button_update.sf_getBgObject().setFillColor(gui_button_color_disabled);
+
         if(title_button_blu.is_selected() && (lock_button_status & LOCK_BLU_BUTTON) <= 0) title_button_blu.sf_getBgObject().setFillColor(gui_button_color_selected);
         else if((lock_button_status & LOCK_BLU_BUTTON) <= 0) title_button_blu.sf_getBgObject().setFillColor(gui_button_color_normal);
         else if( button_mode != BUTTON_MODE_BLU ) title_button_blu.sf_getBgObject().setFillColor(gui_button_color_disabled);
@@ -407,6 +450,14 @@ namespace title_{
 
         if(title_button_install.is_selected() && (lock_button_status & LOCK_INSTALL_BUTTON) <= 0 && (~mouse_clicked & mouse_clicked_one_frame_ago) > 0 && button_mode == BUTTON_MODE_NONE){
             now_scene = ID_INSTALL_MESSAGE;
+            install_::install_scene_mode =  install_::INSTALL_SCENE_MODE_INSTALL;
+            install_text_step_message.sf_getObject().setString( to_sfString(gm_install_step_message) );
+        }
+
+        if(title_button_update.is_selected() && (lock_button_status & LOCK_INSTALL_BUTTON) <= 0 && (~mouse_clicked & mouse_clicked_one_frame_ago) > 0 && button_mode == BUTTON_MODE_NONE){
+            now_scene = ID_INSTALL_MESSAGE;
+            install_::install_scene_mode =  install_::INSTALL_SCENE_MODE_UPDATE;
+            install_text_step_message.sf_getObject().setString( to_sfString(gm_install_update_step_message) );
         }
 
         switch (button_mode)
@@ -479,6 +530,7 @@ namespace title_{
         title_object_device_with_droid.draw(window);
         title_button_install.draw(window);
         title_button_blu.draw(window);
+        title_button_update.draw(window);
         title_button_rebootbl.draw(window);
         title_text_version_copylight.draw(window);
         title_text_command_message.draw(window);
